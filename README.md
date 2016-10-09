@@ -47,7 +47,11 @@ DOL映射优化的目标是计算一组应用程序的最佳映射到形状架�
 
     ls
 
+![](https://github.com/Valesail1/ES2016_14353414/blob/master/3.png)
+
 记录当前的工作路径，为home/zmm/systemc-2.3.1
+
+![](https://github.com/Valesail1/ES2016_14353414/blob/master/4.png)
 
 4.编译dol
 
@@ -59,12 +63,16 @@ DOL映射优化的目标是计算一组应用程序的最佳映射到形状架�
 
     ant -f build_zip.xml all
 
+![](https://github.com/Valesail1/ES2016_14353414/blob/master/5.png)
+
 试运行第一个例子
 
 进入build/bin/mian路径下
 
     cd build/bin/main
 	ant -f runexample.xml -Dnumber=1
+
+![](https://github.com/Valesail1/ES2016_14353414/blob/master/6.png)
 
 <br/>
 <br/>
