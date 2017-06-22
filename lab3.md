@@ -49,6 +49,7 @@ CPU的旋转结果如下：
 
 灰度图边缘检测
 kernel.cl
+    
     const sampler_t sampler = CLK_ADDRESS_CLAMP_TO_EDGE | CLK_FILTER_NEAREST;
     kernel void sobel_gray(read_only image2d_t src,write_only image2d_t dst)
     {
