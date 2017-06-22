@@ -169,25 +169,15 @@ kernel.cl
         cl_sampler sampler = 0;
 
         ret = clGetPlatformIDs(0, NULL, &num_platform);
-        if(num_platform > 0)
-        {
-            cout<<"该电脑共有"<<num_platform<<"个OpenCL平台"<<endl<<endl;
-            platforms = new cl_platform_id[num_platform];  
-            ret = clGetPlatformIDs(num_platform, platforms, NULL);
-            cout<<"请输入0或1,  0是选择intel， 1是选择nvidia"<<endl;
-            int index;
-            cin>>index;
-            platform = platforms[index];
-            delete[] platforms;
-        }
-        else cout<<"没有检测到OpenCL平台"<<endl;
+        if(num_platform < 1)
+	cout<<"没有检测到OpenCL平台"<<endl;
 
         ret = clGetDeviceIDs(platform, CL_DEVICE_TYPE_ALL, 1, &device, NULL);
         cl_bool imageSupport = CL_FALSE;
         clGetDeviceInfo(device, CL_DEVICE_IMAGE_SUPPORT, sizeof(cl_bool), &imageSupport, NULL);
         if (imageSupport != CL_TRUE) cout << "Such device does not support images!!!" <<endl;
 
-        context = clCreateContext(NULL, 1, &device, NULL, NULL, NULL);  //创建上下文
+        context = clCreateContext(NULL, 1, &device, NULL, NULL, NULL);  
 
         queue = clCreateCommandQueue(context, device, CL_QUEUE_PROFILING_ENABLE, &ret); 
 
